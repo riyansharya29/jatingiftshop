@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>JATIN GIFT SHOP — Beauty & Gifts Hub | Tila Kothi, Loni, Ghaziabad</title>
+<meta name="description" content="JATIN GIFT SHOP is a local beauty and gifts hub in Tila Kothi, Loni, Ghaziabad — gifts, cosmetics, fashion accessories, stationery, puja essentials and decorative items. Open 8 AM – 10 PM. Call or WhatsApp +91 8700880708." />
+<meta name="theme-color" content="#0b0b0d" />
+<link rel="icon" href="img/logo.png" />
+<meta property="og:title" content="JATIN GIFT SHOP — Beauty & Gifts Hub" />
+<meta property="og:description" content="Gifts, beauty, accessories, stationery and puja essentials in Tila Kothi, Loni, Ghaziabad." />
+<meta property="og:image" content="img/logo.png" />
+<meta property="og:type" content="business.business" />
+
+<!-- ============================================================
+     EDIT SHOP DETAILS HERE (also mirrored in the CONFIG block in JS)
+     ============================================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "JATIN GIFT SHOP",
+  "description": "Beauty and Gifts Hub offering gifts, cosmetics, fashion accessories, stationery, puja essentials and decorative items.",
+  "image": "img/logo.png",
+  "telephone": "+918700880708",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Tila Kothi",
+    "addressLocality": "Loni, Ghaziabad",
+    "addressRegion": "Uttar Pradesh",
+    "addressCountry": "IN"
+  },
+  "openingHours": "Mo-Su 08:00-22:00",
+  "sameAs": ["https://www.instagram.com/jatingift_shop/"]
+}
+</script>
+
+<style>
+/* ============ DESIGN TOKENS ============ */
+:root{
+  --black:#08080a;
+  --ink:#101014;
+  --ink-2:#16161c;
+  --gold:#e7c15c;
+  --gold-2:#f7e3a1;
+  --gold-3:#b8862f;
+  --cream:#fbf7ef;
+  --cream-2:#f3ece0;
+  --text:#1c1a17;
+  --muted:#6b6459;
+  --muted-d:#b9b1a2;
+  --line:rgba(231,193,92,.28);
+  --radius:22px;
+  --shadow-lg:0 26px 60px -24px rgba(0,0,0,.55);
+  --grad-gold:linear-gradient(135deg,#b8862f 0%,#f7e3a1 38%,#e7c15c 58%,#9a6f22 100%);
+  --font-d:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --font-b:"Segoe UI",Roboto,-apple-system,"Helvetica Neue",Arial,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--cream);color:var(--text);
+  font-family:var(--font-b);font-size:16px;line-height:1.65;
+  overflow-x:hidden;-webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+h1,h2,h3{font-family:var(--font-d);font-weight:700;line-height:1.12;margin:0;letter-spacing:.2px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:8px}
+.wrap{width:min(1180px,92vw);margin-inline:auto}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.gold-text{
+  background:var(--grad-gold);-webkit-background-clip:text;background-clip:text;
+  color:transparent;
+}
+
+/* ============ BUTTONS ============ */
+.btn{
+  --bg:var(--grad-gold);
+  position:relative;display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
+  padding:.95rem 1.6rem;border-radius:999px;border:0;cursor:pointer;
+  font-weight:700;font-size:.95rem;letter-spacing:.3px;
+  background:var(--bg);color:#1a1206;
+  box-shadow:0 12px 28px -12px rgba(184,134,47,.75);
+  transition:transform .28s cubic-bezier(.2,.8,.3,1),box-shadow .28s,filter .28s;
+  will-change:transform;overflow:hidden;text-align:center;
+}
+.btn::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);
+  transform:translateX(-120%);transition:transform .7s ease;
+}
+.btn:hover{transform:translateY(-3px);box-shadow:0 20px 38px -14px rgba(184,134,47,.85)}
+.btn:hover::after{transform:translateX(120%)}
+.btn:active{transform:translateY(0) scale(.97)}
+.btn--ghost{
+  background:rgba(255,255,255,.05);color:var(--gold-2);
+  border:1px solid var(--line);backdrop-filter:blur(10px);
+  box-shadow:0 10px 26px -16px rgba(0,0,0,.8);
+}
+.btn--ghost:hover{background:rgba(231,193,92,.12);box-shadow:0 16px 32px -16px rgba(0,0,0,.9)}
+.btn--wa{background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;box-shadow:0 12px 28px -12px rgba(18,140,126,.8)}
+.btn--dark{background:var(--ink);color:var(--gold-2);border:1px solid var(--line)}
+.btn--sm{padding:.62rem 1.05rem;font-size:.82rem}
+.btn--block{width:100%}
+
+/* ============ NAV ============ */
+.nav{
+  position:fixed;inset:0 0 auto 0;z-index:80;
+  transition:background .35s,box-shadow .35s,padding .35s,border-color .35s;
+  padding:.85rem 0;border-bottom:1px solid transparent;
+  background:linear-gradient(180deg,rgba(8,8,10,.82),rgba(8,8,10,0));
+}
+.nav.is-stuck{
+  background:rgba(10,10,13,.86);backdrop-filter:blur(16px) saturate(140%);
+  border-bottom-color:var(--line);box-shadow:0 10px 30px -20px #000;padding:.55rem 0;
+}
+.nav__in{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.7rem;min-width:0}
+.brand img{width:46px;height:46px;border-radius:50%;box-shadow:0 0 0 1px var(--line),0 8px 20px -10px #000;transition:transform .4s}
+.brand:hover img{transform:rotate(-6deg) scale(1.06)}
+.brand__t{display:flex;flex-direction:column;line-height:1.05;min-width:0}
+.brand__t b{font-family:var(--font-d);font-size:1.06rem;letter-spacing:.6px;color:var(--gold-2);white-space:nowrap}
+.brand__t span{font-size:.56rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted-d)}
+.nav__links{display:none;align-items:center;gap:.35rem}
+.nav__links a{
+  position:relative;padding:.5rem .85rem;font-size:.88rem;font-weight:600;color:#e6e0d4;border-radius:999px;
+  transition:color .25s,background .25s;
+}
+.nav__links a::after{
+  content:"";position:absolute;left:50%;bottom:.28rem;width:0;height:2px;border-radius:2px;
+  background:var(--grad-gold);transform:translateX(-50%);transition:width .3s;
+}
+.nav__links a:hover{color:var(--gold-2)}
+.nav__links a:hover::after,.nav__links a.active::after{width:42%}
+.nav__cta{display:none}
+.burger{
+  display:grid;place-items:center;width:46px;height:46px;border-radius:14px;
+  background:rgba(255,255,255,.06);border:1px solid var(--line);cursor:pointer;
+}
+.burger span{display:block;width:20px;height:2px;background:var(--gold-2);border-radius:2px;transition:transform .3s,opacity .3s}
+.burger span+span{margin-top:5px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.drawer{
+  position:fixed;z-index:79;inset:0 0 0 auto;width:min(320px,84vw);
+  background:linear-gradient(160deg,#111116,#08080a);
+  border-left:1px solid var(--line);
+  transform:translateX(105%);transition:transform .42s cubic-bezier(.2,.8,.25,1);
+  padding:6rem 1.6rem 2rem;display:flex;flex-direction:column;gap:.2rem;
+}
+.drawer.open{transform:none}
+.drawer a{
+  padding:.95rem .4rem;color:#efe9dd;font-weight:600;border-bottom:1px solid rgba(231,193,92,.14);
+  display:flex;justify-content:space-between;align-items:center;transition:color .25s,padding-left .25s;
+}
+.drawer a:hover{color:var(--gold-2);padding-left:.8rem}
+.drawer .btn{margin-top:1.4rem}
+.scrim{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .35s;z-index:78}
+.scrim.on{opacity:1;pointer-events:auto}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;background:radial-gradient(120% 90% at 78% 8%,#1d1a24 0%,#0c0c11 45%,#060608 100%);
+  color:#f2ece0;padding:7.5rem 0 4rem;overflow:hidden;isolation:isolate;
+}
+.hero__glow{
+  position:absolute;width:60vmax;height:60vmax;left:55%;top:-18%;border-radius:50%;
+  background:radial-gradient(circle,rgba(231,193,92,.20),transparent 62%);filter:blur(20px);pointer-events:none;z-index:-2;
+}
+#particles{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none}
+.hero__grid{display:grid;gap:2.4rem;align-items:center}
+.badge{
+  display:inline-flex;align-items:center;gap:.5rem;padding:.45rem 1rem;border-radius:999px;
+  background:rgba(255,255,255,.05);border:1px solid var(--line);backdrop-filter:blur(10px);
+  font-size:.78rem;letter-spacing:.06em;color:var(--gold-2);
+}
+.hero__logo{
+  width:132px;height:132px;border-radius:50%;margin-bottom:1.3rem;
+  box-shadow:0 0 0 1px rgba(231,193,92,.4),0 0 60px -12px rgba(231,193,92,.55),0 24px 50px -20px #000;
+  animation:floatY 7s ease-in-out infinite;
+}
+h1.hero__h{font-size:clamp(2.1rem,7.4vw,3.9rem);margin:1.1rem 0 .9rem;letter-spacing:-.5px}
+.hero__sub{color:#cec6b7;max-width:52ch;font-size:clamp(.96rem,2.6vw,1.08rem)}
+.hero__btns{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1.7rem}
+.hero__meta{display:flex;flex-wrap:wrap;gap:1.2rem;margin-top:2rem;font-size:.82rem;color:var(--muted-d)}
+.hero__meta b{color:var(--gold-2);font-weight:600}
+
+/* ---- 3D gift scene ---- */
+.scene{
+  position:relative;height:330px;perspective:1100px;display:grid;place-items:center;
+  transform-style:preserve-3d;
+}
+.gift{position:absolute;transform-style:preserve-3d;will-change:transform}
+.gift__box{position:relative;transform-style:preserve-3d}
+.face{position:absolute;border-radius:6px;background:var(--f,var(--grad-gold));box-shadow:inset 0 0 40px rgba(0,0,0,.25)}
+.ribbon-v,.ribbon-h{position:absolute;background:linear-gradient(#fff8e2,#e7c15c);opacity:.95;border-radius:2px}
+.lid{position:absolute;transform-style:preserve-3d}
+.bow{
+  position:absolute;left:50%;transform:translateX(-50%);font-size:1.6rem;filter:drop-shadow(0 4px 8px rgba(0,0,0,.5));
+}
+.orb{
+  position:absolute;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,#fff6d8,#e7c15c 45%,#8a5f18);
+  box-shadow:0 10px 26px -8px rgba(0,0,0,.6),inset -6px -8px 16px rgba(0,0,0,.35);
+}
+.float-ico{
+  position:absolute;font-size:1.5rem;filter:drop-shadow(0 6px 12px rgba(0,0,0,.55));
+  will-change:transform;
+}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@keyframes floatY2{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-22px) rotate(5deg)}}
+@keyframes spinSlow{from{transform:rotateY(0)}to{transform:rotateY(360deg)}}
+@keyframes sway{0%,100%{transform:rotate(-7deg)}50%{transform:rotate(7deg)}}
+
+/* ribbon streamers */
+.streamer{position:absolute;width:2px;height:120px;background:linear-gradient(180deg,transparent,rgba(231,193,92,.55),transparent);transform-origin:top center;animation:sway 6s ease-in-out infinite}
+
+/* ============ SECTIONS ============ */
+section{position:relative}
+.sec{padding:clamp(3.5rem,9vw,6rem) 0}
+.sec--cream{background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%)}
+.sec--white{background:#fff}
+.sec--dark{background:radial-gradient(100% 80% at 50% 0%,#17151d,#08080a);color:#f0ead f}
+.sec--dark{color:#efe9dd}
+.head{text-align:center;margin-bottom:2.8rem}
+.eyebrow{
+  display:inline-block;font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--gold-3);font-weight:700;margin-bottom:.7rem;
+}
+.sec--dark .eyebrow{color:var(--gold)}
+.head h2{font-size:clamp(1.85rem,5.6vw,2.85rem)}
+.head p{color:var(--muted);max-width:60ch;margin:.85rem auto 0}
+.sec--dark .head p{color:var(--muted-d)}
+.rule{width:78px;height:2px;margin:1rem auto 0;background:var(--grad-gold);border-radius:2px}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.8,.25,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ============ CATEGORY CARDS ============ */
+.grid{display:grid;gap:1.1rem}
+.cats{grid-template-columns:repeat(2,1fr)}
+.cat{
+  position:relative;border-radius:var(--radius);padding:1.25rem 1.05rem;overflow:hidden;
+  background:#fff;border:1px solid rgba(0,0,0,.06);
+  box-shadow:0 14px 34px -26px rgba(0,0,0,.6);
+  transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.8,.3,1),box-shadow .35s,border-color .35s;
+  will-change:transform;
+}
+.cat::before{
+  content:"";position:absolute;inset:0;opacity:0;transition:opacity .4s;
+  background:linear-gradient(150deg,rgba(231,193,92,.16),transparent 60%);
+}
+.cat:hover{box-shadow:0 30px 55px -28px rgba(0,0,0,.55);border-color:var(--line)}
+.cat:hover::before{opacity:1}
+.cat__ico{
+  width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:1.5rem;
+  background:linear-gradient(145deg,#1a1a20,#0b0b0e);border:1px solid var(--line);
+  box-shadow:0 10px 22px -14px #000;transform:translateZ(26px);transition:transform .35s;
+}
+.cat:hover .cat__ico{transform:translateZ(40px) scale(1.06) rotate(-5deg)}
+.cat h3{font-size:1.08rem;margin:.85rem 0 .3rem;transform:translateZ(16px)}
+.cat p{margin:0;font-size:.82rem;color:var(--muted);transform:translateZ(10px)}
+
+/* ============ PRODUCTS ============ */
+.prods{grid-template-columns:repeat(2,1fr)}
+.prod{
+  background:#fff;border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;
+  border:1px solid rgba(0,0,0,.06);box-shadow:0 16px 36px -28px rgba(0,0,0,.6);
+  transform-style:preserve-3d;transition:transform .35s cubic-bezier(.2,.8,.3,1),box-shadow .35s;
+  will-change:transform;
+}
+.prod:hover{box-shadow:0 34px 60px -30px rgba(0,0,0,.55)}
+.prod__img{position:relative;aspect-ratio:1/1;overflow:hidden;background:#efe9de}
+.prod__img img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.8,.25,1)}
+.prod:hover .prod__img img{transform:scale(1.09)}
+.prod__tag{
+  position:absolute;top:.6rem;left:.6rem;padding:.25rem .65rem;border-radius:999px;font-size:.62rem;
+  letter-spacing:.14em;text-transform:uppercase;font-weight:700;
+  background:rgba(8,8,10,.72);color:var(--gold-2);border:1px solid var(--line);backdrop-filter:blur(6px);
+}
+.prod__b{padding:.95rem .9rem 1.05rem;display:flex;flex-direction:column;gap:.4rem;flex:1}
+.prod__b h3{font-size:1.02rem}
+.prod__b p{margin:0;font-size:.79rem;color:var(--muted);flex:1}
+.prod .btn{margin-top:.5rem}
+
+/* ============ WHY ============ */
+.why{grid-template-columns:repeat(2,1fr)}
+.why__c{
+  padding:1.4rem 1.1rem;border-radius:var(--radius);
+  background:rgba(255,255,255,.045);border:1px solid rgba(231,193,92,.18);
+  backdrop-filter:blur(12px);transition:transform .35s,background .35s,border-color .35s;
+}
+.why__c:hover{transform:translateY(-6px);background:rgba(231,193,92,.09);border-color:var(--line)}
+.why__c .e{font-size:1.7rem;display:block;margin-bottom:.5rem}
+.why__c h3{font-size:1.02rem;color:var(--gold-2);margin-bottom:.3rem}
+.why__c p{margin:0;font-size:.81rem;color:var(--muted-d)}
+
+/* ============ OCCASIONS ============ */
+.occ{grid-template-columns:repeat(2,1fr);gap:.85rem}
+.occ__c{
+  position:relative;border-radius:18px;padding:1.5rem .9rem;text-align:center;overflow:hidden;
+  background:linear-gradient(150deg,#fff,#f6efe2);border:1px solid rgba(184,134,47,.2);
+  transition:transform .4s cubic-bezier(.2,.8,.3,1),box-shadow .4s;
+}
+.occ__c:hover{transform:translateY(-8px) rotate(-1deg);box-shadow:0 26px 46px -26px rgba(120,85,20,.6)}
+.occ__c .e{font-size:2rem;display:block;transition:transform .45s}
+.occ__c:hover .e{transform:translateY(-4px) scale(1.14)}
+.occ__c b{display:block;margin-top:.55rem;font-family:var(--font-d);font-size:1.05rem}
+.occ__c span{font-size:.74rem;color:var(--muted)}
+
+/* ============ ABOUT ============ */
+.about{display:grid;gap:2rem;align-items:center}
+.about__media{position:relative;display:grid;place-items:center;padding:1.5rem}
+.about__media img{
+  width:min(280px,72vw);border-radius:50%;
+  box-shadow:0 0 0 1px var(--line),0 30px 70px -30px rgba(0,0,0,.7);
+  animation:floatY 8s ease-in-out infinite;
+}
+.ring{position:absolute;border-radius:50%;border:1px dashed rgba(184,134,47,.35);animation:spinRing 40s linear infinite}
+@keyframes spinRing{to{transform:rotate(360deg)}}
+.about h2{font-size:clamp(1.8rem,5.4vw,2.6rem);margin-bottom:1rem}
+.about p{color:var(--muted);margin:0 0 .9rem}
+.chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.2rem}
+.chip{padding:.4rem .85rem;border-radius:999px;background:#fff;border:1px solid rgba(184,134,47,.28);font-size:.76rem;font-weight:600;color:var(--gold-3)}
+
+/* ============ INSTAGRAM ============ */
+.ig{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.ig a{
+  position:relative;aspect-ratio:1/1;border-radius:14px;overflow:hidden;display:block;
+  border:1px solid rgba(231,193,92,.18);
+}
+.ig img{width:100%;height:100%;object-fit:cover;transition:transform .7s,filter .5s}
+.ig a::after{
+  content:"↗";position:absolute;inset:0;display:grid;place-items:center;font-size:1.3rem;
+  color:var(--gold-2);background:rgba(8,8,10,.55);opacity:0;transition:opacity .35s;backdrop-filter:blur(2px);
+}
+.ig a:hover img{transform:scale(1.1)}
+.ig a:hover::after{opacity:1}
+
+/* ============ CONTACT ============ */
+.contact{display:grid;gap:1.4rem}
+.info{
+  border-radius:var(--radius);padding:1.6rem 1.3rem;background:#fff;
+  border:1px solid rgba(0,0,0,.06);box-shadow:0 18px 44px -32px rgba(0,0,0,.6);
+}
+.info h3{font-size:1.4rem}
+.info .sub{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-3);font-weight:700}
+.row{display:flex;gap:.85rem;align-items:flex-start;padding:.85rem 0;border-bottom:1px solid rgba(0,0,0,.06)}
+.row:last-of-type{border-bottom:0}
+.row .e{font-size:1.15rem;line-height:1.4}
+.row b{display:block;font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.row span{font-size:.96rem;font-weight:600}
+.cbtns{display:grid;gap:.6rem;margin-top:1rem}
+.map{
+  border-radius:var(--radius);overflow:hidden;min-height:260px;border:1px solid var(--line);
+  background:
+    radial-gradient(circle at 30% 30%,rgba(231,193,92,.14),transparent 55%),
+    linear-gradient(150deg,#15141a,#0a0a0d);
+  display:grid;place-items:center;text-align:center;padding:2rem 1.2rem;color:#efe9dd;position:relative;
+}
+.map .pin{font-size:2.6rem;animation:floatY2 4.5s ease-in-out infinite;display:block}
+.map p{color:var(--muted-d);font-size:.86rem;margin:.5rem 0 1.1rem}
+
+/* ============ FINAL CTA ============ */
+.cta{
+  position:relative;overflow:hidden;text-align:center;
+  background:radial-gradient(110% 100% at 50% 0%,#1e1a26,#08080a 65%);color:#f2ece0;
+  padding:clamp(4rem,11vw,7rem) 0;
+}
+.cta h2{font-size:clamp(2rem,6.4vw,3.2rem)}
+.cta p{color:var(--muted-d);max-width:56ch;margin:1rem auto 2rem}
+.cta__btns{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.cta .float-ico{opacity:.55}
+
+/* ============ FOOTER ============ */
+footer{background:#050506;color:var(--muted-d);padding:2.6rem 0 6rem;border-top:1px solid rgba(231,193,92,.16);font-size:.83rem}
+.foot{display:grid;gap:1.6rem}
+.foot a:hover{color:var(--gold-2)}
+.foot h4{color:var(--gold-2);font-family:var(--font-d);font-size:1.05rem;margin:0 0 .6rem}
+.foot ul{list-style:none;padding:0;margin:0;display:grid;gap:.4rem}
+.copy{margin-top:2rem;padding-top:1.2rem;border-top:1px solid rgba(255,255,255,.07);text-align:center;font-size:.76rem;color:#6d685e}
+
+/* ============ FLOATING WHATSAPP ============ */
+.fab{
+  position:fixed;right:1rem;bottom:1rem;z-index:70;
+  width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;
+  box-shadow:0 14px 30px -10px rgba(18,140,126,.8);
+  transition:transform .3s;animation:pulse 3.2s ease-in-out infinite;
+}
+.fab:hover{transform:scale(1.09)}
+.fab svg{width:28px;height:28px;fill:#fff}
+@keyframes pulse{0%,100%{box-shadow:0 14px 30px -10px rgba(18,140,126,.8),0 0 0 0 rgba(37,211,102,.45)}50%{box-shadow:0 14px 30px -10px rgba(18,140,126,.8),0 0 0 14px rgba(37,211,102,0)}}
+.mobilebar{
+  position:fixed;left:0;right:0;bottom:0;z-index:69;display:grid;grid-template-columns:repeat(3,1fr);
+  background:rgba(8,8,10,.92);backdrop-filter:blur(14px);border-top:1px solid var(--line);
+}
+.mobilebar a{padding:.7rem .2rem;text-align:center;font-size:.68rem;color:#ded7c9;font-weight:600;display:grid;gap:.15rem}
+.mobilebar a .e{font-size:1.05rem}
+.mobilebar a:active{background:rgba(231,193,92,.12)}
+
+
+/* category card as link */
+a.cat{display:block;color:inherit}
+.cat__go{
+  display:inline-block;margin-top:.7rem;font-size:.74rem;font-weight:700;letter-spacing:.08em;
+  color:var(--gold-3);opacity:.75;transition:opacity .3s,transform .3s;transform:translateZ(12px);
+}
+.cat:hover .cat__go{opacity:1;transform:translateZ(20px) translateX(4px)}
+.filter-note{
+  display:flex;align-items:center;justify-content:center;gap:.8rem;flex-wrap:wrap;
+  margin:-1.2rem 0 1.8rem;font-size:.86rem;color:var(--muted);
+}
+.filter-note strong{color:var(--gold-3)}
+.prod[hidden]{display:none}
+
+/* ============ RESPONSIVE ============ */
+@media(min-width:600px){
+  .cats{grid-template-columns:repeat(3,1fr)}
+  .occ{grid-template-columns:repeat(3,1fr)}
+  .why{grid-template-columns:repeat(3,1fr)}
+  .prods{grid-template-columns:repeat(3,1fr)}
+  .cbtns{grid-template-columns:repeat(3,1fr)}
+  .foot{grid-template-columns:repeat(3,1fr)}
+}
+@media(min-width:900px){
+  .nav__links,.nav__cta{display:flex}
+  .burger{display:none}
+  .mobilebar{display:none}
+  footer{padding-bottom:2.6rem}
+  .fab{right:1.8rem;bottom:1.8rem}
+  .hero{padding:9rem 0 6rem}
+  .hero__grid{grid-template-columns:1.05fr .95fr;gap:3rem}
+  .scene{height:460px}
+  .cats{grid-template-columns:repeat(4,1fr)}
+  .prods{grid-template-columns:repeat(4,1fr)}
+  .occ{grid-template-columns:repeat(6,1fr)}
+  .about{grid-template-columns:.85fr 1.15fr;gap:3.5rem}
+  .contact{grid-template-columns:1fr 1fr;gap:1.8rem}
+  .ig{grid-template-columns:repeat(6,1fr);gap:.65rem}
+  .foot{grid-template-columns:1.4fr 1fr 1fr 1fr}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important}
+  .rv{opacity:1;transform:none}
+  #particles{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav__in">
+    <a class="brand" href="#home" aria-label="JATIN GIFT SHOP home">
+      <img src="img/logo.png" alt="JATIN GIFT SHOP logo" width="46" height="46" />
+      <span class="brand__t"><b>JATIN GIFT SHOP</b><span>Beauty &amp; Gifts Hub</span></span>
+    </a>
+    <nav class="nav__links" id="navlinks" aria-label="Primary">
+      <a href="#home">Home</a>
+      <a href="#categories">Categories</a>
+      <a href="#collection">Collection</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__cta">
+      <a class="btn btn--sm btn--wa" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="Mobile menu">
+  <a href="#home">Home <span>→</span></a>
+  <a href="#categories">Categories <span>→</span></a>
+  <a href="#collection">Collection <span>→</span></a>
+  <a href="#occasions">Occasions <span>→</span></a>
+  <a href="#about">About <span>→</span></a>
+  <a href="#instagram">Instagram <span>→</span></a>
+  <a href="#contact">Contact <span>→</span></a>
+  <a class="btn btn--wa" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+  <a class="btn btn--ghost" data-tel href="tel:+918700880708">📞 Call Now</a>
+</aside>
+
+<!-- ================= HERO ================= -->
+<main id="home">
+<section class="hero">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="wrap hero__grid">
+    <div class="hero__copy">
+      <img class="hero__logo" src="img/logo.png" alt="JATIN GIFT SHOP — Beauty and Gifts Hub logo" width="132" height="132" />
+      <div class="badge">📍 <span data-area>Tila Kothi, Loni, Ghaziabad</span></div>
+      <h1 class="hero__h">Gifts, Beauty &amp; <span class="gold-text">Little Things</span> That Make Every Moment Special.</h1>
+      <p class="hero__sub">Discover beautiful gifts, accessories, stationery, puja essentials and more at JATIN GIFT SHOP, Tila Kothi, Loni.</p>
+      <div class="hero__btns">
+        <a class="btn" href="#collection">🎁 Explore Collection</a>
+        <a class="btn btn--wa" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">💬 WhatsApp Us</a>
+      </div>
+      <div class="hero__meta">
+        <div>🕐 Open <b>8:00 AM – 10:00 PM</b></div>
+        <div>📞 <b data-phone>+91 8700880708</b></div>
+        <div>📸 <b>@jatingift_shop</b></div>
+      </div>
+    </div>
+
+    <!-- 3D scene -->
+    <div class="scene" id="scene" aria-hidden="true">
+      <div class="gift" id="g1" data-depth="26"></div>
+      <div class="gift" id="g2" data-depth="16"></div>
+      <div class="gift" id="g3" data-depth="34"></div>
+      <span class="float-ico" data-depth="40" style="left:6%;top:14%;animation:floatY2 6s ease-in-out infinite">💄</span>
+      <span class="float-ico" data-depth="30" style="right:8%;top:8%;animation:floatY 7.5s ease-in-out infinite .4s">💎</span>
+      <span class="float-ico" data-depth="46" style="left:12%;bottom:12%;animation:floatY2 8s ease-in-out infinite .8s">🎀</span>
+      <span class="float-ico" data-depth="22" style="right:12%;bottom:16%;animation:floatY 6.6s ease-in-out infinite .2s">🪔</span>
+      <span class="float-ico" data-depth="36" style="right:26%;top:44%;animation:floatY2 9s ease-in-out infinite 1s">📿</span>
+      <span class="streamer" style="left:22%;top:0"></span>
+      <span class="streamer" style="right:24%;top:6%;animation-duration:7.5s"></span>
+      <span class="orb" data-depth="18" style="width:16px;height:16px;left:18%;top:56%"></span>
+      <span class="orb" data-depth="28" style="width:10px;height:10px;right:18%;top:30%"></span>
+      <span class="orb" data-depth="12" style="width:22px;height:22px;right:34%;bottom:8%"></span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="sec sec--cream" id="categories">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">What We Stock</span>
+      <h2>Shop by <span class="gold-text">Category</span></h2>
+      <div class="rule"></div>
+      <p>From everyday essentials to special-occasion surprises — everything under one friendly roof.</p>
+    </div>
+    <div class="grid cats" id="catGrid"></div>
+  </div>
+</section>
+
+<!-- ================= FEATURED COLLECTION ================= -->
+<section class="sec sec--white" id="collection">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Featured Collection</span>
+      <h2>A Look at <span class="gold-text">Our Shelves</span></h2>
+      <div class="rule"></div>
+      <p>A glimpse of the kinds of products available in store. Availability, designs and prices vary — message us on WhatsApp and we'll tell you exactly what's in stock today.</p>
+    </div>
+    <p class="filter-note" id="filterNote" hidden>
+      Showing: <strong id="filterLabel"></strong>
+      <button type="button" class="btn btn--sm btn--dark" id="clearFilter">Show all ✕</button>
+    </p>
+    <div class="grid prods" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- ================= WHY ================= -->
+<section class="sec sec--dark" id="why">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Why Visit Us</span>
+      <h2>Everything You Need, <span class="gold-text">All in One Place.</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid why" id="whyGrid"></div>
+  </div>
+</section>
+
+<!-- ================= OCCASIONS ================= -->
+<section class="sec sec--cream" id="occasions">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Occasions</span>
+      <h2>Whatever the Occasion, <span class="gold-text">Find Something Special.</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="grid occ" id="occGrid"></div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec sec--white" id="about">
+  <div class="wrap about">
+    <div class="about__media rv">
+      <span class="ring" style="inset:0"></span>
+      <span class="ring" style="inset:8%;animation-duration:55s;animation-direction:reverse"></span>
+      <img src="img/logo.png" alt="JATIN GIFT SHOP logo" width="280" height="280" />
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Our Store</span>
+      <h2>Welcome to <span class="gold-text">JATIN GIFT SHOP</span></h2>
+      <div class="rule" style="margin-left:0"></div>
+      <p style="margin-top:1.2rem" data-about>JATIN GIFT SHOP is a local beauty and gifts hub in Tila Kothi, Loni, offering a variety of gifts, accessories, stationery, decorative products and puja essentials for everyday needs and special occasions.</p>
+      <p>Walk in and browse bangles and fashion jewellery, cosmetics and beauty basics, school and office stationery, puja and religious items, decorative pieces and ready-to-gift boxes — picked with care for our neighbourhood.</p>
+      <p>Not sure what you need? Send us a message on WhatsApp and we'll help you pick something thoughtful.</p>
+      <div class="chips">
+        <span class="chip">Open 7 days</span>
+        <span class="chip">8 AM – 10 PM</span>
+        <span class="chip">Walk-in Store</span>
+        <span class="chip">WhatsApp Enquiries</span>
+        <span class="chip">Gift Wrapping Available</span>
+      </div>
+      <div class="hero__btns">
+        <a class="btn" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Jatin%20Gift%20Shop%2C%20Tila%20Kothi%2C%20Loni%2C%20Ghaziabad%2C%20Uttar%20Pradesh" target="_blank" rel="noopener noreferrer">📍 Get Directions</a>
+        <a class="btn btn--dark" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">💬 Message Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= INSTAGRAM ================= -->
+<section class="sec sec--dark" id="instagram">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">@jatingift_shop</span>
+      <h2>See What's New at <span class="gold-text">JATIN GIFT SHOP</span></h2>
+      <div class="rule"></div>
+      <p>Fresh arrivals and store updates are posted on our Instagram.</p>
+    </div>
+    <div class="ig rv" id="igGrid"></div>
+    <div style="text-align:center;margin-top:1.8rem">
+      <a class="btn" data-ig href="https://www.instagram.com/jatingift_shop/" target="_blank" rel="noopener noreferrer">📸 Follow Us on Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec sec--cream" id="contact">
+  <div class="wrap">
+    <div class="head rv">
+      <span class="eyebrow">Visit / Contact</span>
+      <h2>Come Say <span class="gold-text">Hello</span></h2>
+      <div class="rule"></div>
+    </div>
+    <div class="contact">
+      <div class="info rv">
+        <span class="sub">Beauty and Gifts Hub</span>
+        <h3>JATIN GIFT SHOP</h3>
+        <div class="row"><span class="e">📍</span><div><b>Address</b><span data-address>Tila Kothi, Loni, Ghaziabad, Uttar Pradesh</span></div></div>
+        <div class="row"><span class="e">📞</span><div><b>Phone / WhatsApp</b><span><a data-tel href="tel:+918700880708">+91 8700880708</a></span></div></div>
+        <div class="row"><span class="e">🕐</span><div><b>Opening Hours</b><span>8:00 AM – 10:00 PM (All days)</span></div></div>
+        <div class="row"><span class="e">📸</span><div><b>Instagram</b><span><a href="https://www.instagram.com/jatingift_shop/" target="_blank" rel="noopener noreferrer">@jatingift_shop</a></span></div></div>
+        <div class="cbtns">
+          <a class="btn btn--block" data-tel href="tel:+918700880708">📞 Call Now</a>
+          <a class="btn btn--wa btn--block" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+          <a class="btn btn--dark btn--block" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Jatin%20Gift%20Shop%2C%20Tila%20Kothi%2C%20Loni%2C%20Ghaziabad%2C%20Uttar%20Pradesh" target="_blank" rel="noopener noreferrer">📍 Directions</a>
+        </div>
+      </div>
+      <div class="map rv">
+        <div>
+          <span class="pin">📍</span>
+          <h3 style="color:var(--gold-2);font-size:1.3rem;margin-top:.4rem">Find Us in Loni</h3>
+          <p>Tila Kothi, Loni, Ghaziabad,<br />Uttar Pradesh</p>
+          <a class="btn" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Jatin%20Gift%20Shop%2C%20Tila%20Kothi%2C%20Loni%2C%20Ghaziabad%2C%20Uttar%20Pradesh" target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FINAL CTA ================= -->
+<section class="cta" id="cta">
+  <canvas id="particles2" style="position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none" aria-hidden="true"></canvas>
+  <span class="float-ico" aria-hidden="true" style="left:8%;top:18%;font-size:2.2rem;animation:floatY2 8s ease-in-out infinite">🎁</span>
+  <span class="float-ico" aria-hidden="true" style="right:9%;top:24%;font-size:1.9rem;animation:floatY 7s ease-in-out infinite .5s">🎀</span>
+  <span class="float-ico" aria-hidden="true" style="left:14%;bottom:14%;font-size:1.7rem;animation:floatY 9s ease-in-out infinite 1s">💎</span>
+  <span class="float-ico" aria-hidden="true" style="right:14%;bottom:18%;font-size:2rem;animation:floatY2 7.6s ease-in-out infinite .3s">🪔</span>
+  <div class="wrap" style="position:relative;z-index:2">
+    <div class="rv">
+      <span class="eyebrow">Come Visit</span>
+      <h2>Looking for <span class="gold-text">Something Special?</span></h2>
+      <p>Visit JATIN GIFT SHOP and discover gifts, beauty products, accessories, stationery and more.</p>
+      <div class="cta__btns">
+        <a class="btn" href="#collection">🎁 Explore Collection</a>
+        <a class="btn btn--wa" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">💬 Chat on WhatsApp</a>
+        <a class="btn btn--ghost" data-map href="https://www.google.com/maps/search/?api=1&amp;query=Jatin%20Gift%20Shop%2C%20Tila%20Kothi%2C%20Loni%2C%20Ghaziabad%2C%20Uttar%20Pradesh" target="_blank" rel="noopener noreferrer">📍 Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <div>
+      <a class="brand" href="#home" style="margin-bottom:.8rem">
+        <img src="img/logo.png" alt="" width="46" height="46" />
+        <span class="brand__t"><b>JATIN GIFT SHOP</b><span>Beauty &amp; Gifts Hub</span></span>
+      </a>
+      <p style="margin:.6rem 0 0;max-width:34ch">A local gifts, beauty and stationery store serving Tila Kothi, Loni and nearby areas.</p>
+    </div>
+    <div><h4>Explore</h4><ul>
+      <li><a href="#categories">Categories</a></li>
+      <li><a href="#collection">Collection</a></li>
+      <li><a href="#occasions">Occasions</a></li>
+      <li><a href="#about">About</a></li>
+    </ul></div>
+    <div><h4>Contact</h4><ul>
+      <li><a data-tel href="tel:+918700880708">+91 8700880708</a></li>
+      <li><a data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer">WhatsApp Us</a></li>
+      <li><a data-map href="https://www.google.com/maps/search/?api=1&amp;query=Jatin%20Gift%20Shop%2C%20Tila%20Kothi%2C%20Loni%2C%20Ghaziabad%2C%20Uttar%20Pradesh" target="_blank" rel="noopener noreferrer">Tila Kothi, Loni</a></li>
+      <li><a href="https://www.instagram.com/jatingift_shop/" target="_blank" rel="noopener noreferrer">@jatingift_shop</a></li>
+    </ul></div>
+    <div><h4>Hours</h4><ul>
+      <li>Monday – Sunday</li>
+      <li style="color:var(--gold-2)">8:00 AM – 10:00 PM</li>
+    </ul></div>
+  </div>
+  <div class="wrap copy">© <span id="yr"></span> JATIN GIFT SHOP · Tila Kothi, Loni, Ghaziabad, Uttar Pradesh</div>
+</footer>
+
+<a class="fab" data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.2-1.8-.9-2-1s-.5-.1-.7.1-.8 1-1 1.2-.4.2-.7.1a8.2 8.2 0 0 1-2.4-1.5 9 9 0 0 1-1.7-2.1c-.2-.3 0-.5.1-.6l.5-.6.3-.5a.6.6 0 0 0 0-.6L9 6.6c-.2-.5-.4-.5-.6-.5h-.6a1.2 1.2 0 0 0-.8.4A3.4 3.4 0 0 0 6 9a6 6 0 0 0 1.3 3.1 13.5 13.5 0 0 0 5.2 4.6c.7.3 1.3.5 1.7.6a4.1 4.1 0 0 0 1.9.1 3.1 3.1 0 0 0 2-1.4 2.5 2.5 0 0 0 .2-1.4c-.1-.1-.3-.2-.6-.3zM12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2z"/></svg>
+</a>
+
+<nav class="mobilebar" aria-label="Quick actions">
+  <a data-tel href="tel:+918700880708"><span class="e">📞</span>Call</a>
+  <a data-wa href="https://wa.me/918700880708?text=Hi%20JATIN%20GIFT%20SHOP%2C%20I%20would%20like%20to%20know%20more%20about%20your%20products." target="_blank" rel="noopener noreferrer"><span class="e">💬</span>WhatsApp</a>
+  <a data-map href="https://www.google.com/maps/search/?api=1&amp;query=Jatin%20Gift%20Shop%2C%20Tila%20Kothi%2C%20Loni%2C%20Ghaziabad%2C%20Uttar%20Pradesh" target="_blank" rel="noopener noreferrer"><span class="e">📍</span>Directions</a>
+</nav>
+
+<script>
+/* =====================================================================
+   CONFIG — EDIT ALL SHOP DETAILS HERE
+   ===================================================================== */
+const CONFIG = {
+  name: "JATIN GIFT SHOP",
+  tagline: "Beauty and Gifts Hub",
+  phone: "+918700880708",
+  phoneDisplay: "+91 8700880708",
+  whatsapp: "918700880708",
+  waMessage: "Hi JATIN GIFT SHOP, I would like to know more about your products.",
+  address: "Tila Kothi, Loni, Ghaziabad, Uttar Pradesh",
+  mapsQuery: "Jatin Gift Shop, Tila Kothi, Loni, Ghaziabad, Uttar Pradesh",
+  instagram: "https://www.instagram.com/jatingift_shop/",
+  hours: "8:00 AM – 10:00 PM"
+};
+
+/* wa.me requires a plain digit number, message is percent-encoded */
+const waURL = (msg) => `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(msg || CONFIG.waMessage)}`;
+const telURL = "tel:" + CONFIG.phone;
+const mapURL = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.mapsQuery)}`;
+
+/* Hrefs are already hardcoded in the HTML so they work without JS.
+   This re-syncs them if CONFIG above is edited. */
+document.querySelectorAll('[data-wa]').forEach(a=>{
+  a.href=waURL(); a.target="_blank"; a.rel="noopener noreferrer";
+});
+document.querySelectorAll('[data-tel]').forEach(a=>{ a.href=telURL; });
+document.querySelectorAll('[data-map]').forEach(a=>{
+  a.href=mapURL; a.target="_blank"; a.rel="noopener noreferrer";
+});
+document.querySelectorAll('[data-ig]').forEach(a=>{
+  a.href=CONFIG.instagram; a.target="_blank"; a.rel="noopener noreferrer";
+});
+document.querySelectorAll('[data-phone]').forEach(e=>e.textContent=CONFIG.phoneDisplay);
+document.querySelectorAll('[data-address]').forEach(e=>e.textContent=CONFIG.address);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* ============ CONTENT DATA (editable) ============ */
+const CATEGORIES=[
+ {e:"🎁",t:"Gifts",d:"Ready-to-gift boxes, hampers and thoughtful little surprises.",f:"Gifting"},
+ {e:"💄",t:"Beauty & Cosmetics",d:"Everyday beauty and makeup essentials for all ages.",f:"Beauty"},
+ {e:"💎",t:"Fashion Accessories",d:"Bangles, earrings, necklace sets and trendy add-ons.",f:"Jewellery"},
+ {e:"📚",t:"Stationery",d:"School and office supplies, notebooks, pens and more.",f:"Stationery"},
+ {e:"🪔",t:"Puja & Religious Items",d:"Diyas, idols, puja thali essentials and festive needs.",f:"Puja"},
+ {e:"🎀",t:"Decorative Items",d:"Showpieces and décor to brighten up any corner.",f:"Décor"},
+ {e:"🎉",t:"Party & Celebration",d:"Party supplies and decoration bits for happy occasions.",f:"Party"},
+ {e:"🧸",t:"Toys & Kids Gifts",d:"Fun picks for birthdays, return gifts and little ones.",f:"Party"}
+];
+const PRODUCTS=[
+ {img:"img/p2.jpg",tag:"Accessories",t:"Bangles",d:"Colourful bangle sets in a range of shades and designs.",g:["Jewellery","Gifting"]},
+ {img:"img/p4.jpg",tag:"Jewellery",t:"Necklace Sets",d:"Elegant necklace sets for festive and everyday wear.",g:["Jewellery","Gifting"]},
+ {img:"img/p5.jpg",tag:"Jewellery",t:"Fashion Jewellery",d:"Rings, studs and daily-wear fashion pieces.",g:["Jewellery","Beauty"]},
+ {img:"img/p3.jpg",tag:"Jewellery",t:"Rings & Small Gifts",d:"Neatly boxed little pieces, perfect for gifting.",g:["Jewellery","Gifting","Party"]},
+ {img:"img/p1.jpg",tag:"Gifting",t:"Gift Boxes & Hampers",d:"Packed gift sets ready to hand over on any occasion.",g:["Gifting","Party"]},
+ {img:"img/p6.jpg",tag:"Décor",t:"Decorative Gifts",d:"Bright decorative pieces for home and festive corners.",g:["Décor","Gifting","Party"]},
+ {img:"img/p8.jpg",tag:"Décor",t:"Soft Décor & Cushions",d:"Cosy decorative accents with a gentle finish.",g:["Décor","Gifting"]},
+ {img:"img/p7.jpg",tag:"Puja",t:"Puja & Religious Items",d:"Festive and puja essentials for daily and special rituals.",g:["Puja","Décor"]},
+ {img:"img/p9.jpg",tag:"Décor",t:"Celebration Pieces",d:"Small celebration and showpiece items for happy days.",g:["Décor","Party","Puja"]},
+ {img:"img/p5.jpg",tag:"Beauty",t:"Beauty Products",d:"Everyday cosmetics and beauty basics, ask for options.",g:["Beauty"]},
+ {img:"img/p1.jpg",tag:"Stationery",t:"Stationery Items",d:"Notebooks, pens and school/office daily needs.",g:["Stationery","Gifting"]},
+ {img:"img/p6.jpg",tag:"Party",t:"Party & Return Gifts",d:"Budget-friendly picks for parties and return gifting.",g:["Party","Gifting","Stationery"]}
+];
+const WHY=[
+ {e:"✨",t:"Wide Variety",d:"A broad mix of products across many everyday categories."},
+ {e:"🎁",t:"Gifts for Every Occasion",d:"Birthdays, festivals, weddings or a simple thank-you."},
+ {e:"💎",t:"Beauty & Accessories",d:"Cosmetics, bangles and jewellery in one visit."},
+ {e:"🪔",t:"Puja Essentials",d:"Religious and festive items whenever you need them."},
+ {e:"📚",t:"Stationery & Daily Needs",d:"Handy for students, offices and households nearby."},
+ {e:"🤝",t:"Friendly Local Service",d:"Come in, ask freely — we're happy to help you choose."}
+];
+const OCC=[
+ {e:"🎂",t:"Birthday",d:"Gifts & décor"},
+ {e:"💝",t:"Anniversary",d:"Thoughtful picks"},
+ {e:"🎊",t:"Celebration",d:"Party supplies"},
+ {e:"🎓",t:"Special Moments",d:"Keepsakes"},
+ {e:"🪔",t:"Religious Occasions",d:"Puja essentials"},
+ {e:"🎁",t:"Return Gifts",d:"Bulk-friendly"}
+];
+const IG=["img/p1.jpg","img/p2.jpg","img/p3.jpg","img/p4.jpg","img/p5.jpg","img/p6.jpg","img/p7.jpg","img/p8.jpg","img/p9.jpg","img/p2.jpg","img/p4.jpg","img/p6.jpg"];
+
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+/* Category cards are real links: they jump to #collection and filter it. */
+document.getElementById('catGrid').innerHTML=CATEGORIES.map(c=>`
+ <a class="cat rv tilt" href="#collection" data-filter="${esc(c.f)}"
+    aria-label="View ${esc(c.t)} in our collection">
+ <div class="cat__ico" aria-hidden="true">${c.e}</div>
+ <h3>${esc(c.t)}</h3><p>${esc(c.d)}</p>
+ <span class="cat__go">View collection →</span></a>`).join('');
+
+document.getElementById('prodGrid').innerHTML=PRODUCTS.map(p=>`
+ <article class="prod rv tilt" data-groups="${esc((p.g||[p.tag]).join("|"))}">
+   <div class="prod__img"><img src="${p.img}" alt="${esc(p.t)} at JATIN GIFT SHOP" loading="lazy" decoding="async" width="520" height="520" />
+   <span class="prod__tag">${esc(p.tag)}</span></div>
+   <div class="prod__b"><h3>${esc(p.t)}</h3><p>${esc(p.d)}</p>
+   <a class="btn btn--sm btn--wa" target="_blank" rel="noopener noreferrer"
+      aria-label="Ask about ${esc(p.t)} on WhatsApp"
+      href="${waURL(`Hi JATIN GIFT SHOP, I am interested in the ${p.t} collection. Please share details.`)}">💬 Ask on WhatsApp</a></div>
+ </article>`).join('');
+
+document.getElementById('whyGrid').innerHTML=WHY.map(w=>`
+ <article class="why__c rv"><span class="e" aria-hidden="true">${w.e}</span><h3>${esc(w.t)}</h3><p>${esc(w.d)}</p></article>`).join('');
+
+document.getElementById('occGrid').innerHTML=OCC.map(o=>`
+ <article class="occ__c rv"><span class="e" aria-hidden="true">${o.e}</span><b>${esc(o.t)}</b><span>${esc(o.d)}</span></article>`).join('');
+
+document.getElementById('igGrid').innerHTML=IG.map((s,i)=>`
+ <a href="${CONFIG.instagram}" target="_blank" rel="noopener noreferrer" aria-label="View JATIN GIFT SHOP on Instagram">
+ <img src="${s}" alt="Product from JATIN GIFT SHOP" loading="lazy" decoding="async" width="520" height="520" /></a>`).join('');
+
+/* ============ CATEGORY -> COLLECTION FILTER ============ */
+const prodGrid=document.getElementById('prodGrid');
+const filterNote=document.getElementById('filterNote');
+const filterLabel=document.getElementById('filterLabel');
+
+function applyFilter(tag){
+  const cards=[...prodGrid.querySelectorAll('.prod')];
+  let shown=0;
+  cards.forEach(card=>{
+    const match=!tag||(card.dataset.groups||'').split('|').includes(tag);
+    card.hidden=!match;
+    if(match)shown++;
+  });
+  if(tag&&shown===0){ cards.forEach(c=>c.hidden=false); tag=null; }
+  filterNote.hidden=!tag;
+  if(tag)filterLabel.textContent=tag;
+}
+document.getElementById('clearFilter').addEventListener('click',()=>{
+  applyFilter(null);
+  document.getElementById('collection').scrollIntoView({behavior:RMQ()?'auto':'smooth',block:'start'});
+});
+function RMQ(){try{return window.matchMedia('(prefers-reduced-motion: reduce)').matches}catch(e){return false}}
+
+document.getElementById('catGrid').addEventListener('click',e=>{
+  const card=e.target.closest('.cat'); if(!card)return;
+  applyFilter(card.dataset.filter);
+});
+
+/* ============ SMOOTH SCROLL (all in-page anchors) ============ */
+const navEl=document.getElementById('nav');
+function scrollToId(id){
+  const target=document.getElementById(id); if(!target)return false;
+  const offset=(navEl?navEl.offsetHeight:0)+10;
+  const y=target.getBoundingClientRect().top+scrollY-offset;
+  scrollTo({top:Math.max(y,0),behavior:RMQ()?'auto':'smooth'});
+  target.setAttribute('tabindex','-1');
+  setTimeout(()=>target.focus({preventScroll:true}),RMQ()?0:520);
+  history.replaceState(null,'','#'+id);
+  return true;
+}
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a[href^="#"]'); if(!a)return;
+  const id=a.getAttribute('href').slice(1); if(!id)return;
+  if(scrollToId(id))e.preventDefault();
+});
+
+/* ============ NAV / DRAWER ============ */
+const nav=document.getElementById('nav'),burger=document.getElementById('burger'),
+      drawer=document.getElementById('drawer'),scrim=document.getElementById('scrim');
+const setMenu=o=>{drawer.classList.toggle('open',o);scrim.classList.toggle('on',o);
+  burger.setAttribute('aria-expanded',o);document.body.style.overflow=o?'hidden':''};
+burger.addEventListener('click',()=>setMenu(!drawer.classList.contains('open')));
+scrim.addEventListener('click',()=>setMenu(false));
+drawer.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+addEventListener('scroll',()=>nav.classList.toggle('is-stuck',scrollY>30),{passive:true});
+
+/* scrollspy */
+const links=[...document.querySelectorAll('#navlinks a')];
+const IO=window.IntersectionObserver||function(){return{observe(){},unobserve(){}}};
+const spy=new IO(es=>es.forEach(e=>{
+  if(e.isIntersecting)links.forEach(l=>l.classList.toggle('active',l.getAttribute('href')==='#'+e.target.id));
+}),{rootMargin:"-45% 0px -50% 0px"});
+['home','categories','collection','about','contact'].forEach(id=>{const el=document.getElementById(id);if(el)spy.observe(el)});
+
+/* ============ REVEAL ============ */
+const RM=RMQ();
+if(!RM&&window.IntersectionObserver){
+  const io=new IO((es,o)=>es.forEach((e,i)=>{
+    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('in'),(i%6)*70);o.unobserve(e.target)}
+  }),{threshold:.12,rootMargin:'0px 0px -8%'});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}else document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+
+/* ============ 3D TILT (desktop only) ============ */
+const fine=(function(){try{return window.matchMedia('(hover:hover) and (pointer:fine)').matches}catch(e){return false}})();
+if(fine&&!RM){
+  document.querySelectorAll('.tilt').forEach(card=>{
+    card.style.transformStyle='preserve-3d';
+    card.addEventListener('pointermove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform=`perspective(900px) rotateX(${-y*8}deg) rotateY(${x*10}deg) translateY(-6px)`;
+    });
+    card.addEventListener('pointerleave',()=>{card.style.transform=''});
+  });
+}
+
+/* ============ 3D GIFT BOXES ============ */
+function buildGift(el,size,colorA,colorB,bow){
+  const h=size, w=size, d=size;
+  const grad=`linear-gradient(140deg,${colorA},${colorB})`;
+  const faces=[
+    [`translateZ(${d/2}px)`,w,h],[`rotateY(180deg) translateZ(${d/2}px)`,w,h],
+    [`rotateY(90deg) translateZ(${w/2}px)`,d,h],[`rotateY(-90deg) translateZ(${w/2}px)`,d,h],
+    [`rotateX(90deg) translateZ(${h/2}px)`,w,d],[`rotateX(-90deg) translateZ(${h/2}px)`,w,d]
+  ];
+  el.innerHTML=`<div class="gift__box" style="width:${w}px;height:${h}px">`+
+    faces.map(([t,fw,fh])=>`<div class="face" style="width:${fw}px;height:${fh}px;left:${(w-fw)/2}px;top:${(h-fh)/2}px;transform:${t};--f:${grad}"></div>`).join('')+
+    `<div class="ribbon-v" style="width:${w*.16}px;height:${h+2}px;left:${w/2-w*.08}px;top:-1px;transform:translateZ(${d/2+1}px)"></div>
+     <div class="ribbon-v" style="width:${w*.16}px;height:${h+2}px;left:${w/2-w*.08}px;top:-1px;transform:rotateY(180deg) translateZ(${d/2+1}px)"></div>
+     <div class="ribbon-h" style="width:${w+2}px;height:${h*.16}px;left:-1px;top:${h/2-h*.08}px;transform:rotateX(90deg) translateZ(${h/2+1}px)"></div>
+     <div class="bow" style="top:${-size*0.42}px;font-size:${size*.42}px">${bow}</div>
+    </div>`;
+}
+const mob=innerWidth<720;
+buildGift(document.getElementById('g1'),mob?96:130,'#b8862f','#f7e3a1','🎀');
+buildGift(document.getElementById('g2'),mob?60:78,'#1b1b22','#3a3a46','🎀');
+buildGift(document.getElementById('g3'),mob?52:66,'#8a1f3d','#d95a7d','🎀');
+
+const scene=document.getElementById('scene');
+const g=[
+ {el:document.getElementById('g1'),x:0,y:0,z:0,ry:-22,rx:-8,amp:12,sp:5200,ph:0},
+ {el:document.getElementById('g2'),x:mob?-90:-150,y:mob?-70:-110,z:-60,ry:28,rx:10,amp:16,sp:6400,ph:1200},
+ {el:document.getElementById('g3'),x:mob?95:150,y:mob?75:110,z:-30,ry:-34,rx:12,amp:14,sp:7300,ph:600}
+];
+let mx=0,my=0,tmx=0,tmy=0;
+if(fine&&!RM){
+  addEventListener('pointermove',e=>{tmx=(e.clientX/innerWidth-.5)*2;tmy=(e.clientY/innerHeight-.5)*2},{passive:true});
+}
+const parallaxEls=[...document.querySelectorAll('.scene [data-depth]')];
+let raf;
+function tick(t){
+  mx+=(tmx-mx)*.06; my+=(tmy-my)*.06;
+  g.forEach(o=>{
+    const f=Math.sin((t+o.ph)/o.sp)*o.amp;
+    const swing=Math.sin((t+o.ph)/(o.sp*1.7))*10;
+    o.el.style.transform=`translate3d(${o.x+mx*18}px,${o.y+f+my*12}px,${o.z}px) rotateX(${o.rx-my*6}deg) rotateY(${o.ry+swing+mx*10}deg)`;
+  });
+  parallaxEls.forEach(el=>{
+    const dz=+el.dataset.depth||10;
+    el.style.setProperty('--px',`${mx*dz*0.5}px`);
+    el.style.translate=`${mx*dz*0.35}px ${my*dz*0.3}px`;
+  });
+  raf=requestAnimationFrame(tick);
+}
+if(!RM) raf=requestAnimationFrame(tick);
+else g.forEach(o=>o.el.style.transform=`translate3d(${o.x}px,${o.y}px,${o.z}px) rotateY(${o.ry}deg) rotateX(${o.rx}deg)`);
+
+/* pause when hero off-screen (perf) */
+const heroObs=new IO(es=>es.forEach(e=>{
+  if(RM)return;
+  if(e.isIntersecting&&!raf)raf=requestAnimationFrame(tick);
+  else if(!e.isIntersecting&&raf){cancelAnimationFrame(raf);raf=null}
+}),{threshold:0});
+heroObs.observe(scene);
+
+/* ============ GOLDEN PARTICLES ============ */
+function particles(canvasId,count){
+  const c=document.getElementById(canvasId); if(!c||RM)return;
+  const ctx=c.getContext('2d'); let w,h,dpr,parts=[],run=true;
+  const N=innerWidth<720?Math.round(count*.5):count;
+  function size(){dpr=Math.min(devicePixelRatio||1,2);w=c.clientWidth;h=c.clientHeight;
+    c.width=w*dpr;c.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  function init(){parts=Array.from({length:N},()=>({
+    x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.8+.4,
+    vy:-(Math.random()*.28+.06),vx:(Math.random()-.5)*.16,a:Math.random()*.6+.15,
+    p:Math.random()*Math.PI*2}))}
+  function draw(){
+    if(!run)return;
+    ctx.clearRect(0,0,w,h);
+    for(const p of parts){
+      p.y+=p.vy;p.x+=p.vx+Math.sin(p.p+=.01)*.2;
+      if(p.y<-6){p.y=h+6;p.x=Math.random()*w}
+      if(p.x<-6)p.x=w+6; if(p.x>w+6)p.x=-6;
+      const gl=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,p.r*4);
+      gl.addColorStop(0,`rgba(247,227,161,${p.a})`);
+      gl.addColorStop(1,'rgba(231,193,92,0)');
+      ctx.fillStyle=gl;ctx.beginPath();ctx.arc(p.x,p.y,p.r*4,0,6.283);ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  size();init();draw();
+  addEventListener('resize',()=>{size();init()},{passive:true});
+  new IO(es=>es.forEach(e=>{
+    run=e.isIntersecting; if(run)draw();
+  }),{threshold:0}).observe(c);
+}
+particles('particles',70);
+particles('particles2',40);
+</script>
+</body>
+</html>
